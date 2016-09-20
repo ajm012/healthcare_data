@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}Sick Healthcare Data Visualization Suite{% endblock %}
+
+{% block head %}   
+<meta charset="UTF-8">
+<style>body {background-color: #D3D3D3;}</style>
+<script src="http://cdn.pydata.org/bokeh/release/bokeh-0.11.1.min.js"></script>
+<script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.11.1.min.js"></script>
+<script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-0.11.1.min.css"></script>
+<link rel="stylesheet" href="http://cdn.pydata.org/bokeh/release/bokeh-0.11.1.min.css">
+
+{% endblock %}
+
+{% block content %}
+<h1>Medicare Hospital Information by State</h1>
+<h2>Andrew McConnell</h2>
+<p>The purpose of this data visualization suite is to provide an interactive comparison of healthcare information across US territories. The information contained was provided by the official datasets used on the Medicare.gov Hospital Compare Website, and can be downloaded 
+<a href="http://google.com">here.</a></p>
+<p>This suite was generated using a combination of Python 2.7 (particularly bokeh 0.11.1 for the charts and plots), Django and HTML. Plots are generated upon request rather than stored. Some datasets may be incomplete. Below you may select the dataset and the specific state to analyze.</p>
+
+<div id="selector">
+    <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+        <option value="asm">Ambulatory Surgical Measures</option>
+        <option value="com">Complications</option>
+        <option value="hai">Healthcare Associated Infections</option>
+        <option value="ipfq">Inpatient Psychiatric Facility Quality Measure Data</option>
+        <option value="mhspp">Medicare Hospital Spending Per Patient</option>
+        <option value="oie">Outpatient Imaging Efficiency</option>
+        <option value="ps">Patient Survey (HCAHPS)</option>
+        <option value="pay">Payment</option>
+        <option value="rad">Readmissions and Deaths</option>
+        <option value="taec">Timely and Effective Care</option>
+    </select>
+</div>
+{% endblock %}

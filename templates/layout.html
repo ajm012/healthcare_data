@@ -1,0 +1,15 @@
+{% load static from staticfiles %}
+
+<!doctype html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        {% block head %}{% endblock %}
+    </head>
+    <body>
+        <div class="site-container">
+            <nav>
+            </nav>
+        {% block content %}{% endblock %}</div>
+    </body>
+</html>
